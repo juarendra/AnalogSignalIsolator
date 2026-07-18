@@ -2,6 +2,8 @@
 
 Dokumen ini adalah rujukan pemasangan untuk PCB yang ditunjukkan pada foto di bawah. Gunakan tulisan silkscreen pada PCB sebagai rujukan terakhir apabila orientasi foto atau terminal berbeda.
 
+![Infografik pinout PCB](assets/pinout-pcb-infographic.png)
+
 ![PCB tampak atas](assets/pcb-top-view.jpg)
 
 ## Konektor

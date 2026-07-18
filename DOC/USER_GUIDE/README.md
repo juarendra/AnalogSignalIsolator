@@ -9,6 +9,8 @@ Modul ini mengirimkan tegangan analog DC dari sisi sensor ke sisi mikrokontroler
 > [!IMPORTANT]
 > Ini adalah modul isolator sinyal bertegangan rendah untuk sistem elektronik. Isolasi pada modul **bukan** pernyataan sertifikasi keselamatan, bukan pengganti proteksi petir/surge, dan tidak untuk langsung mengukur tegangan listrik PLN.
 
+![Infografik pinout PCB](assets/pinout-pcb-infographic.png)
+
 ![Alur kerja modul](../00_Block_Diagram_HCNR201_Selectable_RevB2.png)
 
 ## Cocok untuk apa?
