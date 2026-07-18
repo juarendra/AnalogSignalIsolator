@@ -501,236 +501,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_SP3T"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 0 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SW_SP3T"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -15.875 4.445 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Switch, three position, single pole triple throw, 3 position switch, SP3T"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "switch sp3t ON-ON-ON"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SW* SP3T*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SW_SP3T_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.651 0.254) (xy 1.651 2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 2.54)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 -2.54)
-					(radius 0.4572)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_SP3T_1_1"
-				(rectangle
-					(start -3.175 3.81)
-					(end 3.175 -3.81)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "lcsc:AO3401A_C347476"
 			(pin_numbers
 				(hide yes)
@@ -3148,6 +2918,12 @@
 		(uuid "40dee400-55b8-4c5c-b7e1-14fccf5ac79d")
 	)
 	(junction
+		(at 214.63 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "43782f46-16ec-4f27-9b3f-22fa7c91cb6b")
+	)
+	(junction
 		(at 111.76 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3235,7 +3011,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 99.06) (xy 234.95 99.06)
+			(xy 214.63 99.06) (xy 215.9 99.06)
 		)
 		(stroke
 			(width 0)
@@ -3295,6 +3071,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 99.06) (xy 214.63 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a8af288-2e68-447b-99ef-8f67df5196e7")
+	)
+	(wire
+		(pts
 			(xy 151.13 49.53) (xy 158.75 49.53)
 		)
 		(stroke
@@ -3312,6 +3098,16 @@
 			(type default)
 		)
 		(uuid "30554b38-2cf9-4cbe-b490-152cd461d760")
+	)
+	(wire
+		(pts
+			(xy 223.52 99.06) (xy 234.95 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "335539f6-e6f5-40a5-ab33-b160a407e651")
 	)
 	(wire
 		(pts
@@ -3385,6 +3181,16 @@
 	)
 	(wire
 		(pts
+			(xy 223.52 111.76) (xy 234.95 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b81a224-fe03-4a03-8270-b1a321246cf2")
+	)
+	(wire
+		(pts
 			(xy 203.2 132.08) (xy 205.74 132.08)
 		)
 		(stroke
@@ -3435,7 +3241,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 111.76) (xy 204.47 111.76)
+			(xy 194.31 111.76) (xy 214.63 111.76)
 		)
 		(stroke
 			(width 0)
@@ -3505,7 +3311,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 124.46) (xy 234.95 124.46)
+			(xy 214.63 124.46) (xy 215.9 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3555,7 +3361,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 114.3) (xy 214.63 124.46)
+			(xy 214.63 111.76) (xy 214.63 124.46)
 		)
 		(stroke
 			(width 0)
@@ -3665,13 +3471,13 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 109.22) (xy 214.63 99.06)
+			(xy 214.63 111.76) (xy 215.9 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b1c8e151-516f-406c-a893-0058ed140f3f")
+		(uuid "b482b9e0-5599-4498-b457-fb0db074d82d")
 	)
 	(wire
 		(pts
@@ -3735,16 +3541,6 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 111.76) (xy 234.95 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7382384-f784-4e65-a8c2-3df674bea501")
-	)
-	(wire
-		(pts
 			(xy 77.47 92.71) (xy 83.82 92.71)
 		)
 		(stroke
@@ -3802,6 +3598,16 @@
 			(type default)
 		)
 		(uuid "dcfbbc98-cfae-4a50-8851-f540149a4869")
+	)
+	(wire
+		(pts
+			(xy 223.52 124.46) (xy 234.95 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df7f985a-1d68-4849-9180-d10bac30e45d")
 	)
 	(wire
 		(pts
@@ -4015,7 +3821,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 251.46 100.838 90)
 			(hide yes)
 			(show_name no)
@@ -4095,7 +3901,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 76.2 140.0048 0)
 			(hide yes)
 			(show_name no)
@@ -4309,10 +4115,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1d74be67-b46c-45ac-b092-b4751ac9c5a5")
 		(property "Reference" "U5"
-			(at 86.36 108.2512 0)
+			(at 82.804 125.73 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4322,7 +4127,7 @@
 			)
 		)
 		(property "Value" "OPA392DBVR"
-			(at 86.36 110.7912 0)
+			(at 83.312 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4606,7 +4411,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 122.682 45.72 90)
 			(hide yes)
 			(show_name no)
@@ -4766,6 +4571,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 219.71 99.06 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41725881-e69f-4108-affa-8ebbeed57132")
+		(property "Reference" "M5V1"
+			(at 219.71 92.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 219.71 95.25 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 219.71 100.838 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 219.71 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d5285cab-ad74-4b23-b82a-688fd61a69c1")
+		)
+		(pin "1"
+			(uuid "259bb49e-b892-4537-84d8-d5b6a0800d29")
+		)
+		(instances
+			(project "AnalogIsolator"
+				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
+					(reference "M5V1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND1")
 		(at 73.66 124.46 0)
 		(unit 1)
@@ -4877,7 +4762,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 39.0652 119.38 0)
 			(hide yes)
 			(show_name no)
@@ -4998,92 +4883,6 @@
 			(project "AnalogIsolator"
 				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
 					(reference "#PWR07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_SP3T")
-		(at 209.55 111.76 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "52ba849c-91c0-4a6e-b55c-6d8b81a7bb2a")
-		(property "Reference" "SW1"
-			(at 209.55 102.87 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_SP3T"
-			(at 209.55 105.41 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.675 107.315 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 209.55 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Switch, three position, single pole triple throw, 3 position switch, SP3T"
-			(at 209.55 111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dbe2563b-caf0-40fb-8fd6-c8c3533eb0dc")
-		)
-		(pin "2"
-			(uuid "960f9fd0-7a98-4701-8180-e1fb82e329c2")
-		)
-		(pin "3"
-			(uuid "77bf14c6-4326-4561-9a36-33179ccb8f84")
-		)
-		(pin "4"
-			(uuid "42c1959a-5611-45fa-bd3f-95b354e03572")
-		)
-		(instances
-			(project "AnalogIsolator"
-				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
-					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -5371,7 +5170,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 238.76 126.238 90)
 			(hide yes)
 			(show_name no)
@@ -5453,7 +5252,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 84.582 58.42 90)
 			(hide yes)
 			(show_name no)
@@ -5580,6 +5379,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 219.71 111.76 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d00423b-ca75-4787-9853-88e8749f6a54")
+		(property "Reference" "M3.3V1"
+			(at 219.71 105.41 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 219.71 107.95 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 219.71 113.538 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 219.71 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "afdabad8-ba6a-4c6b-bfa4-f5bcd098e962")
+		)
+		(pin "1"
+			(uuid "863f9f6d-d2e2-4a34-9b28-b6d41f9247f7")
+		)
+		(instances
+			(project "AnalogIsolator"
+				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
+					(reference "M3.3V1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 175.26 55.88 0)
 		(unit 1)
@@ -5613,7 +5492,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 176.2252 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -6006,7 +5885,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 45.72 113.538 90)
 			(hide yes)
 			(show_name no)
@@ -6086,7 +5965,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 77.47 91.7448 0)
 			(hide yes)
 			(show_name no)
@@ -6595,7 +6474,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 30.48 113.538 90)
 			(hide yes)
 			(show_name no)
@@ -6676,7 +6555,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 112.7252 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -6834,7 +6713,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 238.76 100.838 90)
 			(hide yes)
 			(show_name no)
@@ -6877,6 +6756,86 @@
 			(project "AnalogIsolator"
 				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 219.71 124.46 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c5d8cb54-58c6-44b7-921a-b7d14107bd87")
+		(property "Reference" "M2.4V1"
+			(at 219.71 118.11 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0"
+			(at 219.71 120.65 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 219.71 126.238 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 219.71 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "39edbabc-1868-4daa-b803-d6ef8fb52dc8")
+		)
+		(pin "1"
+			(uuid "5dd7c20d-f659-4562-926f-e140481e4aae")
+		)
+		(instances
+			(project "AnalogIsolator"
+				(path "/9c2e93c9-b93e-4edb-b748-7c80067a9655"
+					(reference "M2.4V1")
 					(unit 1)
 				)
 			)
@@ -7070,7 +7029,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 177.8 157.7848 0)
 			(hide yes)
 			(show_name no)
@@ -7150,7 +7109,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 177.8 109.5248 0)
 			(hide yes)
 			(show_name no)
@@ -7311,7 +7270,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 206.7052 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7393,7 +7352,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 159.7152 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -7473,7 +7432,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 199.39 133.858 90)
 			(hide yes)
 			(show_name no)
@@ -7750,7 +7709,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 125.4252 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -8088,7 +8047,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 96.52 116.078 90)
 			(hide yes)
 			(show_name no)
@@ -8168,7 +8127,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 238.76 113.538 90)
 			(hide yes)
 			(show_name no)
