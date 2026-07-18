@@ -1,0 +1,6 @@
+# Local KiCad session files — do not commit.
+~*.lck
+*.kicad_prl
+*.bak
+*.tmp
+.history/

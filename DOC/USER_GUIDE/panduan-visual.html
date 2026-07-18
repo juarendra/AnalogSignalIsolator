@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panduan Pengguna — Analog Signal Isolator Rev B2</title>
+  <style>
+    :root { --navy:#0f2744; --blue:#1769aa; --ink:#182230; --muted:#5c6775; --line:#dce5ed; --bg:#f5f8fb; --warn:#fff4d6; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--bg); font:16px/1.55 Arial, Helvetica, sans-serif; }
+    header { color:#fff; background:linear-gradient(135deg,var(--navy),var(--blue)); padding:56px 24px 48px; }
+    .wrap { max-width:1020px; margin:auto; }
+    h1 { margin:0 0 8px; font-size:clamp(29px,5vw,48px); line-height:1.12; }
+    h2 { color:var(--navy); margin:0 0 14px; font-size:25px; }
+    h3 { color:var(--navy); margin:0 0 8px; }
+    .lead { max-width:720px; margin:0; font-size:19px; opacity:.96; }
+    main { max-width:1020px; margin:28px auto 64px; padding:0 24px; }
+    section { background:#fff; border:1px solid var(--line); border-radius:14px; padding:27px; margin:20px 0; box-shadow:0 4px 16px #1020300a; }
+    .notice { border-left:5px solid #d28d00; background:var(--warn); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:15px; }
+    .card strong { display:block; color:var(--blue); margin-bottom:4px; }
+    figure { margin:22px 0 4px; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff; }
+    figure img { display:block; width:100%; height:auto; }
+    figcaption { padding:9px 14px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border:1px solid var(--line); border-radius:8px; }
+    th, td { padding:10px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    th { color:#fff; background:var(--navy); }
+    tr:last-child td { border-bottom:0; }
+    ol { padding-left:24px; }
+    li { margin:8px 0; }
+    code { padding:2px 5px; border-radius:4px; background:#eaf0f5; color:#173957; }
+    .formula { padding:16px; border-radius:8px; background:#e9f4fc; color:var(--navy); font:600 18px/1.4 Consolas, monospace; }
+    footer { padding:20px 24px 40px; text-align:center; color:var(--muted); font-size:14px; }
+    @media (max-width:620px) { section { padding:19px; } th,td { padding:8px; font-size:14px; } .table-scroll { overflow:auto; } }
+    @media print { body { background:#fff; } header { padding:28px; } section { box-shadow:none; break-inside:avoid; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Analog Signal Isolator</h1>
+      <p class="lead">Panduan pemasangan dan penggunaan untuk modul isolator sinyal 0–5 V — Rev B2.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice">
+      <strong>Penting.</strong> Modul ini untuk sinyal elektronik bertegangan rendah. Bukan alat ukur langsung listrik PLN, bukan pernyataan sertifikasi keselamatan, dan bukan pengganti proteksi petir/surge.
+    </section>
+
+    <section class="notice">
+      <strong>Perbedaan revisi.</strong> Dokumen teknik Rev B2 menyebut selector SW1, sedangkan PCB pada foto memakai jumper solder M2.4V1/M3.3V1/M5V1. Ikuti <a href="pinout-pcb.html">panduan pinout PCB fisik</a> saat memasang unit tersebut.
+    </section>
+
+    <section>
+      <h2>Apa fungsi modul ini?</h2>
+      <p>Modul memisahkan sisi sensor dari sisi mikrokontroler/PLC secara galvanik. Sensor mengirim sinyal DC 0–5 V melalui <code>VIN</code>; host menerima versi terisolasi di <code>VOUT</code>. Ground sensor dan ground host tidak boleh disatukan.</p>
+      <figure>
+        <img src="../00_Block_Diagram_HCNR201_Selectable_RevB2.png" alt="Diagram blok Analog Signal Isolator">
+        <figcaption>Alur sinyal dari sensor terisolasi menuju host/MCU.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Spesifikasi utama</h2>
+      <div class="grid">
+        <div class="card"><strong>Input sensor</strong>0–5,0 V DC yang sudah dikondisikan.</div>
+        <div class="card"><strong>Catu host</strong>5 V DC teratur, disarankan memiliki pembatas arus.</div>
+        <div class="card"><strong>Mode keluaran</strong>2,4 V, 3,0 V, atau 4,5 V nominal.</div>
+        <div class="card"><strong>Penggunaan</strong>Sensor DC/lambat; input mulai teredam sekitar 339 Hz.</div>
+      </div>
+      <p>Modul bukan input 4–20 mA, bukan input AC, dan tidak boleh diberi sinyal negatif atau lebih dari 5 V tanpa rangkaian pengondisi tambahan.</p>
+    </section>
+
+    <section>
+      <h2>Wiring</h2>
+      <figure>
+        <img src="../05_Connector_Wiring_RevB2.png" alt="Diagram konektor J1 host dan J2 sensor">
+        <figcaption>Hubungkan host pada J1 dan sensor pada J2 seperti gambar.</figcaption>
+      </figure>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Konektor</th><th>Pin</th><th>Fungsi</th></tr></thead>
+        <tbody>
+          <tr><td>J1 — HOST</td><td>1: <code>5V_IN</code></td><td>Catu host +5 V</td></tr>
+          <tr><td>J1 — HOST</td><td>2: <code>VOUT</code></td><td>Ke ADC/input analog host</td></tr>
+          <tr><td>J1 — HOST</td><td>3: <code>GND_HOST</code></td><td>Ground host/MCU/PLC</td></tr>
+          <tr><td>J2 — SENSOR</td><td>1: <code>5V_ISO</code></td><td>+5 V terisolasi untuk sensor</td></tr>
+          <tr><td>J2 — SENSOR</td><td>2: <code>VIN</code></td><td>Sinyal sensor 0–5 V</td></tr>
+          <tr><td>J2 — SENSOR</td><td>3: <code>GND_ISO</code></td><td>Ground sensor</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <h2>Pilih mode sebelum menyalakan daya</h2>
+      <figure>
+        <img src="../04_Output_Mode_Selection_and_ADC_Interface_RevB2.png" alt="Diagram mode keluaran 24, 33 dan 50">
+        <figcaption>SW1 adalah pemilih tunggal: aktifkan hanya satu mode.</figcaption>
+      </figure>
+      <div class="table-scroll"><table>
+        <thead><tr><th>Mode</th><th>Keluaran skala penuh nominal</th><th>Penggunaan yang dianjurkan</th></tr></thead>
+        <tbody>
+          <tr><td>MODE 24</td><td>2,4 V</td><td>ESP32 atau ADC 3,3 V yang memerlukan margin aman</td></tr>
+          <tr><td>MODE 33</td><td>3,0 V</td><td>ADC MCU 3,3 V umum</td></tr>
+          <tr><td>MODE 50</td><td>4,5 V</td><td>ADC 5 V, Arduino 5 V, atau PLC</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section>
+      <h2>Pasang dalam 8 langkah</h2>
+      <ol>
+        <li>Matikan seluruh catu daya dan pilih mode SW1.</li>
+        <li>Pastikan keluaran sensor adalah 0–5 V DC.</li>
+        <li>Hubungkan <code>5V_IN</code>, <code>VOUT</code>, dan <code>GND_HOST</code> pada J1.</li>
+        <li>Hubungkan sensor ke <code>5V_ISO</code>, <code>VIN</code>, dan <code>GND_ISO</code> pada J2.</li>
+        <li>Pastikan tidak ada hubungan antara <code>GND_HOST</code> dan <code>GND_ISO</code>.</li>
+        <li>Nyalakan catu host +5 V yang memiliki pembatas arus.</li>
+        <li>Uji input 0 V dan 5 V; periksa apakah VOUT mendekati skala penuh mode.</li>
+        <li>Lakukan kalibrasi dua titik sebelum penggunaan presisi.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Pinout berdasarkan PCB fisik</h2>
+      <figure>
+        <img src="assets/pcb-top-view.jpg" alt="PCB tampak atas dengan sisi MCU dan sensor">
+        <figcaption>MCU SIDE: AOUT, GND, 5V. SENSOR SIDE: AIN, GND, 5V. Ikuti label silkscreen di PCB.</figcaption>
+      </figure>
+      <p>PCB pada foto memakai jumper solder <code>M2.4V1</code>, <code>M3.3V1</code>, dan <code>M5V1</code>. Pasang satu saja (FIT ONE ONLY). Detail pemasangan tersedia dalam <a href="PINOUT_PCB_ID.md">dokumen pinout PCB</a>.</p>
+      <figure>
+        <img src="assets/pcb-bottom-view.jpg" alt="PCB tampak bawah">
+        <figcaption>Jangan membuat hubungan konduktif melintasi celah isolasi di tengah PCB.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Kalibrasi dua titik</h2>
+      <p>Catat <code>VZERO</code> pada VIN = 0 V dan <code>VFULL</code> pada VIN = 5 V. Untuk setiap pembacaan ADC, gunakan:</p>
+      <div class="formula">VIN = (VMEAS − VZERO) × 5,0 / (VFULL − VZERO)</div>
+      <p>Simpan nilai kalibrasi untuk tiap unit dan tiap mode. Kalibrasi ini hanya untuk jalur isolator; kalibrasi fisik sensor dilakukan terpisah.</p>
+    </section>
+
+    <section>
+      <h2>Catatan keandalan dan troubleshooting</h2>
+      <ul>
+        <li>Rev B2 tidak memiliki TVS atau sekering resettable pada papan; proteksi surge dan pembatas arus harus disediakan oleh sistem.</li>
+        <li>Jika output 0 V, periksa catu J1, catu sensor J2, lalu tegangan VIN terhadap GND_ISO.</li>
+        <li>Jika pembacaan bising, cari sambungan ground tak sengaja melalui USB, osiloskop, atau kabel sensor.</li>
+        <li>Jika skala penuh meleset, jangan mengubah switch; lakukan kalibrasi dua titik dengan sumber uji yang akurat.</li>
+      </ul>
+      <figure>
+        <img src="../03_HCNR201_Analog_Schematic_Selectable_RevB2.png" alt="Skematik jalur analog HCNR201">
+        <figcaption>Referensi teknis jalur analog untuk troubleshooting tingkat lanjut.</figcaption>
+      </figure>
+    </section>
+  </main>
+  <footer>Analog Signal Isolator · Rev B2 · Buka file ini di browser agar seluruh gambar tampil.</footer>
+</body>
+</html>

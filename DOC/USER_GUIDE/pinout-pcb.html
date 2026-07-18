@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinout PCB — Analog Signal Isolator</title>
+  <style>
+    :root { --navy:#102b46; --blue:#1472b8; --ink:#172434; --line:#d8e3ec; --soft:#f5f8fb; --warn:#fff4d6; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--soft); font:16px/1.55 Arial,Helvetica,sans-serif; }
+    header { padding:44px 24px; color:white; background:linear-gradient(135deg,var(--navy),var(--blue)); }
+    main, header > div { max-width:1000px; margin:auto; } h1 { margin:0 0 7px; font-size:clamp(28px,5vw,45px); } h2 { color:var(--navy); margin-top:0; }
+    main { padding:24px; } section { margin:18px 0; padding:24px; border:1px solid var(--line); border-radius:13px; background:white; }
+    figure { margin:18px 0 0; overflow:hidden; border:1px solid var(--line); border-radius:9px; } figure img { display:block; width:100%; height:auto; } figcaption { padding:9px 12px; color:#596879; font-size:14px; }
+    table { width:100%; border-collapse:collapse; } th,td { padding:11px; border-bottom:1px solid var(--line); text-align:left; } th { color:white; background:var(--navy); } tr:last-child td { border-bottom:0; }
+    .alert { border-left:5px solid #d18800; background:var(--warn); } code { padding:2px 5px; color:#123a60; background:#e7eef4; border-radius:4px; } li { margin:7px 0; }
+    @media(max-width:600px){ main{padding:14px;} section{padding:17px;} th,td{font-size:14px;padding:8px;} .scroll{overflow:auto;} }
+  </style>
+</head>
+<body>
+  <header><div><h1>Pinout PCB</h1><p>Analog Signal Isolator — rujukan pemasangan berdasarkan silkscreen PCB fisik.</p></div></header>
+  <main>
+    <section class="alert"><strong>Peringatan:</strong> jangan menyatukan ground MCU dan ground sensor. Ikuti label silkscreen pada PCB sebagai rujukan akhir.</section>
+    <section>
+      <h2>Tampak atas: konektor dan pemilih mode</h2>
+      <figure><img src="assets/pcb-top-view.jpg" alt="Tampak atas PCB Analog Signal Isolator"><figcaption>Sisi kiri adalah MCU SIDE; sisi kanan adalah SENSOR SIDE.</figcaption></figure>
+    </section>
+    <section>
+      <h2>Arti setiap terminal</h2>
+      <div class="scroll"><table>
+        <thead><tr><th>Sisi</th><th>Label</th><th>Fungsi</th></tr></thead>
+        <tbody>
+          <tr><td>MCU SIDE</td><td><code>AOUT</code></td><td>Ke input ADC/analog host.</td></tr>
+          <tr><td>MCU SIDE</td><td><code>GND</code></td><td>Ground host/MCU/PLC.</td></tr>
+          <tr><td>MCU SIDE</td><td><code>5V</code></td><td>Masukan catu 5 V untuk modul.</td></tr>
+          <tr><td>SENSOR SIDE</td><td><code>AIN</code></td><td>Masukan sinyal sensor 0–5 V DC.</td></tr>
+          <tr><td>SENSOR SIDE</td><td><code>GND</code></td><td>Ground sensor terisolasi.</td></tr>
+          <tr><td>SENSOR SIDE</td><td><code>5V</code></td><td>Keluaran +5 V terisolasi untuk sensor.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <section>
+      <h2>Pilih satu mode saja</h2>
+      <p>Area <strong>FIT ONE ONLY</strong> menggunakan jumper solder/0 Ω. Pilih salah satu: <code>M2.4V1</code> untuk ADC bertegangan rendah, <code>M3.3V1</code> untuk kelas ADC 3,3 V, atau <code>M5V1</code> untuk kelas ADC 5 V/PLC. Jangan menjumper lebih dari satu pilihan.</p>
+      <p>Ukur dan kalibrasikan keluaran AOUT pada AIN = 0 V dan 5 V. Label mode menunjukkan kelas ADC; hasil presisi harus mengikuti pengukuran unit yang digunakan.</p>
+    </section>
+    <section>
+      <h2>Tampak bawah: jaga celah isolasi</h2>
+      <figure><img src="assets/pcb-bottom-view.jpg" alt="Tampak bawah PCB Analog Signal Isolator"><figcaption>Jangan menambahkan kabel, timah, sekrup, atau kontaminasi konduktif melintasi celah isolasi di tengah PCB.</figcaption></figure>
+    </section>
+  </main>
+</body>
+</html>
