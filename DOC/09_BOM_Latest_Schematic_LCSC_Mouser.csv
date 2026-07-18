@@ -1,0 +1,25 @@
+Item,RefDes,Qty,Value / requirement,Footprint,Recommended manufacturer MPN,LCSC part #,Mouser # / sourcing MPN,Status,Notes
+1,U1,1,High-linearity analog optocoupler,Wide SOP-8 2.54 mm,HCNR201-500E,C27465,630-HCNR201-500E,Approved,Core analog isolator; use exact MPN.
+2,U3,1,Low-power RRIO precision op amp,SOT-23-5,OPA317IDBVR,C41431830 (schematic currently says OPA317IDBVR-TP),595-OPA317IDBVR,Review required,LCSC C41431830 is listed as TECH PUBLIC rather than TI; validate pinout and loop stability before substituting the official TI part.
+3,U5,1,Precision RRIO low-noise op amp,SOT-23-5,OPA392DBVR,C3647166,595-OPA392DBVR,Approved,Use exact MPN.
+4,U4,1,5 V in / 5 V 200 mA isolated regulated DC/DC,SIP 19.5 x 6 mm,IF0505S-1WR3,C5369637,Exact Mouser listing not verified,Approved LCSC / review Mouser,Do not replace without verifying pinout regulation no-load behavior ripple and isolation rating.
+5,U7,1,P-channel MOSFET 30 V,SOT-23,AO3401A,C347476,PJA3401A_R1_00001 (alternative; verify pinout),Approved LCSC / review Mouser,LCSC component is marked not recommended for new designs; qualify alternate before production.
+6,U8 U9,2,3-position 5.00 mm through-hole terminal block,TH P=5.00 mm,KF301-5.0-3P,C474882,3-position 5.00 mm terminal block (mechanical substitute),Approved LCSC / review Mouser,Verify terminal orientation body size and pin pitch before substituting.
+7,L1,1,Ferrite bead 600 ohm at 100 MHz 500 mA,0603,BLM18AG601SN1D,C19330,81-BLM11A601S,Approved,Use exact MPN.
+8,C1 C3 C6 C8 C9 C10,6,100 nF 50 V X7R 10%,0603,CL10B104KB8NNNC,C1591,187-CL10B104KB8NNNC,Approved,Place close to the relevant IC or DC/DC pins.
+9,C2,1,2.2 nF C0G / NP0 50 V,0603,GCM1885C1J222JA16J,C17596087,GCM1885C1J222JA16J,Approved,Compensation capacitor; do not substitute with X7R.
+10,C4,1,4.7 uF 10 V X5R 10%,0603,CL10A475KP8NNNC,C1705,187-CL10A475KP8NNNC,Approved,Check effective capacitance at 5 V DC bias.
+11,C5,1,10 uF 25 V X5R 10%,0805,CL21A106KAYNNNE,C15850,187-CL21A106KAYNNNE,Approved,Isolated-side bulk capacitor.
+12,C7,1,1 nF C0G / NP0 50 V,0603,CC0603JRNPO9BN102,C106246,603-C0603JRNPO9BN102,Approved,Compensation capacitor; do not substitute with X7R.
+13,D2,1,Indicator LED; colour and Vf unspecified,0603,TBD,TBD,TBD,Blocker,Latest schematic only says LED. Specify colour luminous intensity Vf and polarity before release.
+14,M2.4V1 M3.3V1 M5V1,3,0 ohm mode-selection links; fit one only,0603,RC0603JR-070RL,C21189,603-RC0603JR-070RL,Approved,Populate exactly one link according to selected output mode.
+15,R1,1,4.7 kohm 1%,0603,RC0603FR-074K7L,C99782,603-RC0603FR-074K7L,Approved,Input series/protection resistor.
+16,R2,1,164 kohm 0.1% thin film 25 ppm/C or better,0603,RT0603BRD07164KL,Source by MPN / verify current LCSC listing,603-RT0603BRD07164KL,Review required,The previous BOM used 0805; latest PCB footprint is 0603.
+17,R3,1,220 ohm 1%,0603,RC0603FR-07220RL,C107696,603-RC0603FR-07220RL,Approved,LED current limiting resistor in analog loop.
+18,R4,1,80.6 kohm 0.1% thin film,0805,PTFR0805B80K6P9,C2849352,PTFR0805B80K6P9,Approved,Mode 2.4 V gain resistor.
+19,R5,1,101 kohm 0.1% thin film,0805,RN73R2ATTD1013B25,C4150121,RN73R2ATTD1013B25,Approved,Mode 3.3 V class gain resistor.
+20,R6,1,150 kohm 0.1% thin film,0805,RT0805BRD07150KL,C136927,RT0805BRD07150KL,Approved,Mode 5 V class gain resistor.
+21,R7,1,1 kohm 1%,0603,RC0603FR-071KL,C22548,603-RC0603FR-071KL,Approved,Output series resistor.
+22,R9,1,1.8 kohm 0.1% thin film,0805,RT0805BRE071K8L,C513603,RT0805BRE071K8L,Approved,Series gain resistor for the 5 V class mode.
+23,R10,1,100 kohm 1%,0603,RC0603FR-07100KL,C25803,603-RC0603FR-07100KL,Approved,PMOS gate pull-down resistor.
+24,R11,1,1 kohm 0.1% thin film 25 ppm/C or better,0603,RT0603BRD071KL,Source by MPN / verify current LCSC listing,603-RT0603BRD071KL,Review required,The previous BOM used an 0805 resistor; latest PCB footprint is 0603.

@@ -7,6 +7,7 @@ Folder ini dipisahkan berdasarkan tujuan agar file yang dibutuhkan pengguna, tek
 | [`USER_GUIDE/`](USER_GUIDE/) | Panduan pembeli/pengguna, halaman visual, foto PCB, dan pinout. |
 | `00`–`05` | Diagram blok, skematik, pemilihan mode, dan pengkabelan Rev B2. |
 | `06_BOM_and_Calculations_RevB2_LCSC.xlsx` | BOM, nilai komponen, dan perhitungan desain. |
+| [`09_BOM_Latest_Schematic_LCSC_Mouser.xlsx`](09_BOM_Latest_Schematic_LCSC_Mouser.xlsx) | BOM baru hasil cocokkan dengan skematik saat ini; mencantumkan sumber LCSC dan Mouser serta item yang perlu disetujui. Lihat [catatan validasi](09_BOM_Latest_Schematic_LCSC_Mouser.md). |
 | `07`–`08` | Aturan layout PCB serta pengujian/kalibrasi. |
 
 Mulai dari [`USER_GUIDE/pinout-pcb.html`](USER_GUIDE/pinout-pcb.html) untuk pemasangan visual berdasarkan PCB fisik, atau [`USER_GUIDE/PINOUT_PCB_ID.md`](USER_GUIDE/PINOUT_PCB_ID.md) untuk versi Markdown.
