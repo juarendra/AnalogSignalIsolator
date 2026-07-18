@@ -12,6 +12,32 @@
   <a href="DOC/USER_GUIDE/assets/pinout-pcb-infographic.png"><strong>Unduh gambar pinout &rarr;</strong></a>
 </p>
 
+## Produk ini untuk apa?
+
+Analog Signal Isolator adalah **jembatan aman untuk sinyal analog 0–5 V**. Modul ini menerima tegangan dari sensor di satu sisi, lalu mengirimkan kembali nilai yang sama secara analog ke ADC mikrokontroler/PLC di sisi lain—tanpa hubungan listrik langsung antara kedua ground.
+
+Masalah yang diselesaikan modul ini adalah *ground loop*, noise, dan gangguan ketika sensor berada di mesin/panel yang berbeda dengan ESP32, Arduino, PLC, data logger, atau komputer yang terhubung USB. Sensor tetap memperoleh catu 5 V dari sisi terisolasi, sedangkan MCU membaca sinyal melalui `AOUT`.
+
+```text
+Sensor 0–5 V       Isolator analog optik              Mikrokontroler / PLC
+
+AIN ─────────────▶ [ SENSOR SIDE  ║  MCU SIDE ] ─────────────▶ AOUT → ADC
+GND sensor         ground terpisah / tidak tersambung          GND MCU
+```
+
+**Intinya:** jika sensor menunjukkan 2,50 V pada `AIN`, modul meneruskan nilai proporsional pada `AOUT` sesuai mode yang dipilih. Perangkat lunak kemudian mengubah pembacaan ADC tersebut kembali menjadi nilai sensor melalui kalibrasi dua titik.
+
+## Contoh aplikasi
+
+| Aplikasi | Cara modul digunakan | Manfaat |
+| --- | --- | --- |
+| **Data logger ESP32** | Sensor tekanan, level, atau posisi 0–5 V dipasang di sisi sensor; `AOUT` dibaca ESP32 pada sisi MCU. | Mengurangi noise dan risiko gangguan ground saat ESP32 memakai USB/Wi-Fi. |
+| **Monitoring panel mesin** | Sensor analog pada panel mesin dihubungkan ke `AIN`; sistem monitoring terpisah membaca `AOUT`. | Ground sistem monitoring tidak perlu disatukan dengan ground panel. |
+| **Input analog PLC** | Sinyal sensor 0–5 V diteruskan ke input analog PLC melalui sisi MCU. | Membantu pemisahan domain sensor dan kontrol. |
+| **Gateway IoT retrofit** | Tambahkan ESP32/Arduino untuk membaca keluaran sensor pada alat lama tanpa mengubah wiring sensor utama. | Integrasi monitoring jarak jauh lebih aman dan rapi. |
+
+> Modul ini bekerja untuk **tegangan analog DC 0–5 V yang sudah dikondisikan**. Untuk sensor 4–20 mA, RTD, thermocouple, AC, atau tegangan PLN, gunakan rangkaian pengondisi sinyal yang tepat terlebih dahulu.
+
 ## Kenapa menggunakan modul ini?
 
 - **Isolasi galvanik** antara sisi sensor dan sisi MCU/PLC untuk membantu mengurangi *ground loop* dan gangguan.
