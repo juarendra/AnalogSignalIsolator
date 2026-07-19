@@ -79,6 +79,21 @@ Konektor `5V` pada **SENSOR SIDE** adalah keluaran dari DC/DC isolasi, bukan cat
 - Rating modul DC/DC yang dipasang adalah 5 V / 200 mA, tetapi sebagian arus dipakai oleh rangkaian isolator dan perlu margin untuk suhu serta lonjakan awal. Karena itu **200 mA bukan batas beban sensor eksternal**.
 - Bila sensor memiliki arus *inrush*, relay, pemanas, atau motor, gunakan catu sensor terisolasi eksternal yang sesuai. Jangan mengambil daya beban tersebut dari PCB ini.
 
+## Proteksi sistem yang direkomendasikan
+
+![Diagram proteksi catu eksternal](DOC/USER_GUIDE/assets/external-power-protection.svg)
+
+PCB ini tidak memasang TVS atau PPTC. Untuk instalasi panel/mesin, pasang proteksi **di luar PCB** pada sisi yang tepat:
+
+1. Gunakan catu **5 V DC teratur**; jangan hubungkan sumber dengan tegangan lebih dari 5 V ke `5V` pada MCU SIDE.
+2. Pada kabel `+5V` menuju MCU SIDE, pasang **sekering atau PPTC**. Tentukan nilai *hold/trip* dari arus sistem dan uji arus awal; sebagai titik awal desain, rentang 250–500 mA lazim untuk jalur modul ini, bukan nilai yang otomatis cocok untuk semua sistem.
+3. Pasang **TVS unidirectional dengan tegangan kerja 5 V** antara `+5V` dan `GND` **setelah** sekering/PPTC. Pilih energi impuls dan tegangan jepit berdasarkan lingkungan serta kemampuan catu; TVS bukan pengganti sekering.
+4. Untuk kabel sensor panjang atau berada di lingkungan berisiko gangguan, TVS 5 V tambahan boleh dipasang dekat konektor **SENSOR SIDE**, dari `5V` ke `GND` sensor saja. Gunakan pelindung sinyal yang dirancang untuk jenis sensor pada jalur `AIN`; jangan memasang komponen sembarang yang mengubah akurasi sinyal.
+5. Bila ada shield kabel, terminasi ke chassis/earth di titik masuk panel sesuai praktik sistem. Jangan memakai shield atau perangkat ukur untuk menyatukan `GND` sensor dan `GND` MCU.
+
+> [!WARNING]
+> Jangan memasang TVS, jumper, kabel, atau ground melintasi celah/penghalang isolasi. Untuk petir atau surge energi tinggi, gunakan SPD pada pintu masuk sistem dan catu yang sesuai. PCB ini bukan penangkal petir maupun perangkat bersertifikasi keselamatan.
+
 ## Dokumentasi
 
 | Dokumen | Kegunaan |

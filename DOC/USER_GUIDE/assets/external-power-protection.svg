@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Rekomendasi proteksi catu eksternal untuk Analog Signal Isolator</title>
+  <desc id="desc">Diagram menunjukkan sekering atau PPTC dan TVS pada catu 5 volt sisi MCU, serta pilihan TVS terpisah pada sisi sensor. Ground tidak disatukan melewati penghalang isolasi.</desc>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#16283a}.title{font-size:31px;font-weight:700}.head{font-size:22px;font-weight:700}.label{font-size:18px;font-weight:700}.small{font-size:15px}.box{stroke:#1e4e76;stroke-width:3;rx:16}.wire{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.host{fill:#e8f2fb}.sensor{fill:#e9f6ec}.warn{fill:#fff3d7}.white{fill:#fff}
+  </style>
+  <rect width="1200" height="650" fill="#f5f8fb"/>
+  <text x="600" y="48" class="title" text-anchor="middle">REKOMENDASI PROTEKSI CATU EKSTERNAL</text>
+  <text x="600" y="78" class="small" text-anchor="middle">Untuk catu 5 V DC teratur. Proteksi tidak dipasang pada PCB ini.</text>
+
+  <rect x="45" y="145" width="220" height="210" class="box host"/>
+  <text x="155" y="190" class="head" text-anchor="middle">CATU 5 V HOST</text>
+  <text x="155" y="220" class="small" text-anchor="middle">adaptor / PSU DC</text>
+  <text x="155" y="266" class="label" text-anchor="middle">+5V</text>
+  <text x="155" y="315" class="label" text-anchor="middle">GND</text>
+
+  <rect x="335" y="145" width="220" height="210" class="box warn"/>
+  <text x="445" y="187" class="head" text-anchor="middle">PROTEKSI HULU</text>
+  <text x="445" y="225" class="label" text-anchor="middle">SEKERING / PPTC</text>
+  <text x="445" y="250" class="small" text-anchor="middle">di jalur +5V</text>
+  <text x="445" y="300" class="label" text-anchor="middle">TVS 5 V</text>
+  <text x="445" y="325" class="small" text-anchor="middle">antara +5V dan GND</text>
+
+  <rect x="635" y="120" width="250" height="280" class="box host"/>
+  <text x="760" y="166" class="head" text-anchor="middle">MCU SIDE</text>
+  <text x="760" y="201" class="label" text-anchor="middle">5V  •  GND  •  AOUT</text>
+  <rect x="736" y="235" width="48" height="120" rx="4" fill="#313b43"/>
+  <text x="760" y="298" class="small white" text-anchor="middle" transform="rotate(-90 760 298)">ISOLASI</text>
+
+  <rect x="935" y="120" width="220" height="280" class="box sensor"/>
+  <text x="1045" y="166" class="head" text-anchor="middle">SENSOR SIDE</text>
+  <text x="1045" y="201" class="label" text-anchor="middle">5V  •  GND  •  AIN</text>
+  <text x="1045" y="252" class="small" text-anchor="middle">Opsional untuk kabel</text>
+  <text x="1045" y="277" class="small" text-anchor="middle">sensor panjang / lingkungan</text>
+  <text x="1045" y="302" class="small" text-anchor="middle">berisiko surge:</text>
+  <text x="1045" y="337" class="label" text-anchor="middle">TVS 5 V lokal</text>
+  <text x="1045" y="365" class="small" text-anchor="middle">ke GND SENSOR saja</text>
+
+  <path d="M265 265 H335" class="wire" stroke="#d93025"/>
+  <path d="M265 315 H335" class="wire" stroke="#252f38"/>
+  <path d="M555 265 H635" class="wire" stroke="#d93025"/>
+  <path d="M555 315 H635" class="wire" stroke="#252f38"/>
+  <path d="M885 265 H935" class="wire" stroke="#d93025"/>
+  <path d="M885 315 H935" class="wire" stroke="#252f38"/>
+
+  <rect x="70" y="470" width="1060" height="120" rx="14" fill="#fff3d7" stroke="#d39b00" stroke-width="3"/>
+  <text x="600" y="510" class="head" text-anchor="middle">PENTING</text>
+  <text x="600" y="540" class="label" text-anchor="middle">JANGAN memasang TVS, kabel, atau ground yang melintasi penghalang isolasi.</text>
+  <text x="600" y="570" class="small" text-anchor="middle">Untuk surge petir/energi tinggi, gunakan SPD pada masuknya sistem dan catu yang sesuai—bukan PCB ini sebagai penangkal petir.</text>
+</svg>

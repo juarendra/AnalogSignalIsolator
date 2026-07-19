@@ -39,6 +39,20 @@ Pin `5V` pada **SENSOR SIDE** boleh memberi daya sensor hingga **150 mA kontinu 
 > [!CAUTION]
 > Konverter DC/DC pada PCB memiliki rating 5 V / 200 mA, tetapi angka itu adalah rating konverter secara keseluruhan—**bukan** arus yang seluruhnya tersedia untuk sensor. Jangan gunakan `5V` SENSOR SIDE untuk relay, motor, pemanas, atau beban dengan *inrush* besar. Pakai catu terisolasi eksternal untuk beban seperti itu.
 
+## Proteksi catu eksternal (disarankan)
+
+![Diagram proteksi catu eksternal](assets/external-power-protection.svg)
+
+PCB ini tidak memiliki TVS maupun PPTC. Untuk pemasangan di panel atau mesin:
+
+1. Beri catu hanya dari sumber **5 V DC teratur** pada MCU SIDE.
+2. Pasang sekering atau PPTC pada kabel `+5V` sebelum PCB. Pilih rating dari arus sistem dan uji arus awal; 250–500 mA dapat dipakai sebagai titik awal desain, lalu disesuaikan hasil uji.
+3. Pasang TVS **unidirectional, 5 V working voltage** di antara `+5V` dan `GND` sesudah sekering/PPTC. Pastikan energi surge dan tegangan jepit TVS sesuai dengan lingkungan/catu Anda.
+4. Untuk kabel sensor panjang, TVS 5 V terpisah boleh dipasang dari `5V` ke `GND` pada sisi sensor. Jangan pernah memasang TVS atau kabel yang menghubungkan GND sensor dengan GND MCU.
+
+> [!WARNING]
+> Proteksi di atas untuk sistem 5 V DC. Untuk petir atau surge energi tinggi, gunakan SPD di pintu masuk panel dan catu yang sesuai. Jangan memakai PCB ini sebagai proteksi petir atau klaim sertifikasi keselamatan.
+
 ## Wiring contoh: sensor 0–5 V ke ESP32
 
 ![Diagram wiring ESP32](assets/wiring-esp32-example.svg)
