@@ -4147,7 +4147,7 @@
 		(descr "CONN-TH_3P-P5.00_KF301-5.0-3P footprint")
 		(tags "CONN-TH_3P-P5.00_KF301-5.0-3P footprint C474882")
 		(property "Reference" "U8"
-			(at -8.4 0 180)
+			(at -8.4 0 0)
 			(layer "F.SilkS")
 			(uuid "b4d9fb20-4dbc-4bf3-a803-cd00302613ff")
 			(effects
@@ -4450,13 +4450,13 @@
 		(embedded_fonts no)
 		(model "packages3d/CONN-TH_3P-P5.00_KF301-5.0-3P.step"
 			(offset
-				(xyz 0.199999597 0.1499869977 -4.199991537)
+				(xyz 0.2 0.149987 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -5009,13 +5009,13 @@
 		(embedded_fonts no)
 		(model "packages3d/L0603.step"
 			(offset
-				(xyz 1.664436575 -0.4920233926 0)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 -180)
+				(xyz -0 -0 -180)
 			)
 		)
 	)
@@ -5791,13 +5791,13 @@
 		(embedded_fonts no)
 		(model "packages3d/OPTO-SMD-8P_L11.0-W9.0-P2.54-LS12.4-BL.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 2.7)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -6471,13 +6471,13 @@
 		(embedded_fonts no)
 		(model "packages3d/PWRM-TH_BXXXXLS-1W.step"
 			(offset
-				(xyz 1.520012177 -1.599996776 -3.499992947)
+				(xyz 1.520012 -1.599997 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
