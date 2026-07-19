@@ -19,7 +19,7 @@
 <body>
   <header><div><h1>Pinout PCB</h1><p>Analog Signal Isolator — rujukan pemasangan berdasarkan silkscreen PCB fisik. <a href="start-here.html" style="color:#fff"><strong>Mulai pemasangan →</strong></a></p></div></header>
   <main>
-    <section class="alert"><strong>Peringatan:</strong> jangan menyatukan ground MCU dan ground sensor. Ikuti label silkscreen pada PCB sebagai rujukan akhir.</section>
+    <section class="alert"><strong>Produk siap ESP32:</strong> paket berisi satu PCB yang sudah dirakit dengan <code>M2.4V1</code> sudah terpasang. Sensor, kabel, catu daya, dan board ESP32 tidak termasuk. Jangan menyatukan ground MCU dan ground sensor; ikuti label silkscreen pada PCB sebagai rujukan akhir.</section>
     <section>
       <h2>Ringkasan pinout siap dibagikan</h2>
       <figure><img src="assets/pinout-pcb-infographic.png" alt="Infografik pinout PCB Analog Signal Isolator"><figcaption>Versi gambar vertikal untuk dikirim ke pembeli atau dipasang pada halaman produk.</figcaption></figure>
@@ -38,14 +38,18 @@
           <tr><td>MCU SIDE</td><td><code>5V</code></td><td>Masukan catu 5 V untuk modul.</td></tr>
           <tr><td>SENSOR SIDE</td><td><code>AIN</code></td><td>Masukan sinyal sensor 0–5 V DC.</td></tr>
           <tr><td>SENSOR SIDE</td><td><code>GND</code></td><td>Ground sensor terisolasi.</td></tr>
-          <tr><td>SENSOR SIDE</td><td><code>5V</code></td><td>Keluaran +5 V terisolasi untuk sensor.</td></tr>
+          <tr><td>SENSOR SIDE</td><td><code>5V</code></td><td>Keluaran +5 V terisolasi untuk sensor, maks. 150 mA kontinu.</td></tr>
         </tbody>
       </table></div>
     </section>
     <section>
-      <h2>Pilih satu mode saja</h2>
-      <p>Area <strong>FIT ONE ONLY</strong> menggunakan jumper solder/0 Ω. Pilih salah satu: <code>M2.4V1</code> untuk ADC bertegangan rendah, <code>M3.3V1</code> untuk kelas ADC 3,3 V, atau <code>M5V1</code> untuk kelas ADC 5 V/PLC. Jangan menjumper lebih dari satu pilihan.</p>
+      <h2>Mode ESP32 sudah dipilih</h2>
+      <p>Area <strong>FIT ONE ONLY</strong> menggunakan jumper solder/0 Ω. Produk standar dikirim dengan <code>M2.4V1</code> untuk ESP32 sudah terpasang. Bila konfigurasi diubah saat daya mati, pilih hanya satu: <code>M3.3V1</code> untuk kelas ADC 3,3 V, atau <code>M5V1</code> untuk kelas ADC 5 V/PLC. Jangan menjumper lebih dari satu pilihan.</p>
       <p>Ukur dan kalibrasikan keluaran AOUT pada AIN = 0 V dan 5 V. Label mode menunjukkan kelas ADC; hasil presisi harus mengikuti pengukuran unit yang digunakan.</p>
+    </section>
+    <section>
+      <h2>Batas catu sensor</h2>
+      <p>Batasi seluruh beban pada pin <code>5V</code> SENSOR SIDE hingga <strong>150 mA kontinu</strong>. Rating DC/DC 200 mA mencakup konsumsi internal PCB, sehingga tidak seluruhnya tersedia untuk sensor. Gunakan catu terisolasi eksternal untuk relay, motor, pemanas, atau beban dengan lonjakan arus besar.</p>
     </section>
     <section>
       <h2>Tampak bawah: jaga celah isolasi</h2>

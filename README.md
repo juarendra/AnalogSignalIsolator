@@ -5,6 +5,9 @@
 > [!NOTE]
 > Panduan pembeli pada halaman ini berlaku untuk PCB yang silkscreen-nya bertuliskan **`AIN`**, **`AOUT`**, `MCU SIDE`, `SENSOR SIDE`, dan `FIT ONE ONLY`.
 
+> [!TIP]
+> Produk dikirim sebagai **satu PCB yang sudah dirakit**. Mode bawaan untuk ESP32, yaitu `M2.4V1`, sudah terpasang. Paket tidak mencakup sensor, kabel, catu daya, maupun board ESP32.
+
 <p align="center">
   <img src="DOC/USER_GUIDE/assets/pcb-top-view.jpg" alt="PCB Analog Signal Isolator — tampak atas" width="760">
 </p>
@@ -45,15 +48,15 @@ GND sensor         ground terpisah / tidak tersambung          GND MCU
 
 - **Isolasi galvanik** antara sisi sensor dan sisi MCU/PLC untuk membantu mengurangi *ground loop* dan gangguan.
 - **Input sensor 0–5 V DC** dengan keluaran analog terisolasi `AOUT`.
-- **Catu sensor 5 V terisolasi** tersedia langsung pada konektor sisi sensor.
-- **Mode untuk kelas ADC 2,4 V / 3,3 V / 5 V** melalui satu jumper pilihan (`FIT ONE ONLY`).
+- **Catu sensor 5 V terisolasi** tersedia langsung pada konektor sisi sensor, hingga **150 mA kontinu** untuk beban sensor.
+- **Mode ESP32 2,4 V** sudah dipilih dari pabrik (`M2.4V1`); pilihan lain hanya untuk perubahan konfigurasi terkontrol.
 - **Siap untuk dokumentasi dan produksi:** proyek KiCad, Gerber, BOM, skematik, serta prosedur pengujian tersedia di repositori.
 
 ## Gambaran koneksi
 
 | MCU SIDE | SENSOR SIDE |
 | --- | --- |
-| `5V` — catu masuk modul | `5V` — catu keluar terisolasi untuk sensor |
+| `5V` — catu masuk modul | `5V` — catu keluar terisolasi untuk sensor (maks. 150 mA kontinu) |
 | `GND` — ground MCU/PLC | `GND` — ground sensor terisolasi |
 | `AOUT` — ke input ADC | `AIN` — dari output sensor 0–5 V |
 
@@ -63,10 +66,18 @@ GND sensor         ground terpisah / tidak tersambung          GND MCU
 ## Mulai cepat
 
 1. Buka [Mulai di Sini — PCB AIN/AOUT](DOC/USER_GUIDE/start-here.html).
-2. Saat daya mati, pilih **satu** jumper mode: `M2.4V1`, `M3.3V1`, atau `M5V1`.
+2. Pastikan `M2.4V1` masih terpasang sebagai mode bawaan ESP32. Jangan mengubah jumper mode kecuali Anda memang mengganti jenis host.
 3. Hubungkan sensor 0–5 V ke `AIN` dan `GND` pada **SENSOR SIDE**.
 4. Hubungkan ADC ke `AOUT`, catu +5 V ke `5V`, dan ground host ke `GND` pada **MCU SIDE**.
 5. Nyalakan catu 5 V yang teratur dan memiliki pembatas arus, kemudian kalibrasikan pembacaan 0 V dan 5 V.
+
+## Batas catu untuk sensor
+
+Konektor `5V` pada **SENSOR SIDE** adalah keluaran dari DC/DC isolasi, bukan catu 5 V berdaya besar.
+
+- Gunakan beban sensor total **maksimum 150 mA secara kontinu** (gabungan arus sensor dan aksesori yang mengambil daya dari konektor ini).
+- Rating modul DC/DC yang dipasang adalah 5 V / 200 mA, tetapi sebagian arus dipakai oleh rangkaian isolator dan perlu margin untuk suhu serta lonjakan awal. Karena itu **200 mA bukan batas beban sensor eksternal**.
+- Bila sensor memiliki arus *inrush*, relay, pemanas, atau motor, gunakan catu sensor terisolasi eksternal yang sesuai. Jangan mengambil daya beban tersebut dari PCB ini.
 
 ## Dokumentasi
 

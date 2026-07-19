@@ -44,7 +44,7 @@
   <rect x="574" y="230" width="52" height="270" rx="4" fill="#313b43"/>
   <text x="600" y="355" class="small white" text-anchor="middle" transform="rotate(-90 600 355)">ISOLATION BARRIER</text>
   <rect x="442" y="535" width="315" height="70" rx="10" fill="#fff2cc" stroke="#d39b00" stroke-width="2"/>
-  <text x="600" y="565" class="label" text-anchor="middle">UNTUK ESP32: FIT M2.4V1 SAJA</text>
+  <text x="600" y="565" class="label" text-anchor="middle">ESP32: M2.4V1 TERPASANG</text>
   <text x="600" y="590" class="small" text-anchor="middle">Jangan pasang M3.3V1 atau M5V1 bersamaan.</text>
 
   <rect x="875" y="180" width="270" height="390" class="box" fill="#e8f2fb"/>

@@ -11,23 +11,33 @@ Panduan ini cocok apabila silkscreen PCB Anda memuat semua tulisan berikut: `MCU
 
 ## Yang perlu disiapkan
 
-1. PCB Analog Signal Isolator ini.
+1. Satu PCB Analog Signal Isolator yang sudah dirakit (isi paket produk).
 2. Catu 5 V DC yang teratur dan memiliki pembatas arus.
 3. Sensor dengan output **0–5 V DC** yang sudah dikondisikan.
 4. Mikrokontroler/PLC dengan input ADC. Contoh berikut memakai ESP32.
-5. Untuk PCB yang belum dirakit penuh: **satu** resistor/jumper 0 Ω 0603 pada salah satu posisi mode. Tanyakan kepada penjual mode apa yang sudah dipasang bila Anda membeli versi rakitan.
+5. Kabel penghubung yang sesuai. Sensor, kabel, catu daya, dan board ESP32 **tidak** termasuk paket.
+
+> [!TIP]
+> PCB produk ini sudah dirakit dan dikirim dengan mode ESP32 `M2.4V1` terpasang. Tidak perlu memasang resistor/jumper tambahan untuk penggunaan ESP32.
 
 ## Sebelum menghubungkan kabel
 
-Pilih **satu** mode saja pada area `FIT ONE ONLY`.
+Mode bawaan produk sudah `M2.4V1` untuk ESP32. Area `FIT ONE ONLY` hanya dipakai bila konfigurasi perlu diubah saat daya mati oleh teknisi yang memahami perubahan tersebut.
 
 | Perangkat host | Pasang 0 Ω pada | Keluaran pada AIN = 5 V (nominal) |
 | --- | --- | ---: |
-| ESP32 / ADC 3,3 V yang butuh margin aman | `M2.4V1` | sekitar 2,4 V |
+| ESP32 / ADC 3,3 V yang butuh margin aman | `M2.4V1` **(bawaan, sudah terpasang)** | sekitar 2,4 V |
 | ADC kelas 3,3 V | `M3.3V1` | sekitar 3,0 V |
 | Arduino 5 V / PLC | `M5V1` | sekitar 4,5 V |
 
 **Jangan pasang dua atau tiga jumper.** Nama `M3.3V1` dan `M5V1` menunjukkan kelas ADC, bukan keluaran tepat 3,3 V atau 5,0 V.
+
+## Batas arus catu sensor
+
+Pin `5V` pada **SENSOR SIDE** boleh memberi daya sensor hingga **150 mA kontinu total**. Batas ini sudah menyisakan arus untuk rangkaian isolator, toleransi, suhu, dan lonjakan saat sensor mulai menyala.
+
+> [!CAUTION]
+> Konverter DC/DC pada PCB memiliki rating 5 V / 200 mA, tetapi angka itu adalah rating konverter secara keseluruhan—**bukan** arus yang seluruhnya tersedia untuk sensor. Jangan gunakan `5V` SENSOR SIDE untuk relay, motor, pemanas, atau beban dengan *inrush* besar. Pakai catu terisolasi eksternal untuk beban seperti itu.
 
 ## Wiring contoh: sensor 0–5 V ke ESP32
 
@@ -47,7 +57,7 @@ Pilih **satu** mode saja pada area `FIT ONE ONLY`.
 
 ## Uji pertama dalam 5 menit
 
-1. Matikan catu daya, lalu pastikan hanya `M2.4V1` terpasang untuk ESP32.
+1. Matikan catu daya, lalu pastikan jumper bawaan `M2.4V1` masih terpasang untuk ESP32.
 2. Hubungkan kabel sesuai tabel di atas.
 3. Nyalakan catu +5 V pada **MCU SIDE**.
 4. Ukur `AOUT` terhadap `GND` di **MCU SIDE**:
@@ -96,7 +106,7 @@ GPIO34 hanya contoh; gunakan pin ADC yang tersedia di papan ESP32 Anda. Jangan m
 | `AOUT` 0 V terus | Ada +5 V pada MCU SIDE; sensor mendapat +5 V pada SENSOR SIDE; sensor OUT benar-benar 0–5 V terhadap GND sensor. |
 | ADC ESP32 selalu maksimum | Pastikan hanya `M2.4V1` yang terpasang dan `AOUT` masuk ke pin ADC, bukan pin digital biasa. |
 | Pembacaan bising / isolasi tidak terasa | Cari ground yang tersambung lewat USB, osiloskop, shield kabel, atau catu eksternal. |
-| Tidak tahu mode yang terpasang | Lihat tiga footprint di area `FIT ONE ONLY`, atau tanyakan kepada penjual sebelum memberi daya. |
+| Tidak tahu mode yang terpasang | Produk standar dikirim dengan `M2.4V1`. Bila tampak berbeda, lihat area `FIT ONE ONLY` atau tanyakan kepada penjual sebelum memberi daya. |
 
 ## Lanjutkan ke dokumen lain
 
