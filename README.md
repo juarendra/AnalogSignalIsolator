@@ -2,12 +2,15 @@
 
 > Isolator sinyal analog 0–5 V untuk menghubungkan sensor ke ESP32, Arduino, MCU, atau PLC tanpa menyatukan ground kedua sisi.
 
+> [!NOTE]
+> Panduan pembeli pada halaman ini berlaku untuk PCB yang silkscreen-nya bertuliskan **`AIN`**, **`AOUT`**, `MCU SIDE`, `SENSOR SIDE`, dan `FIT ONE ONLY`.
+
 <p align="center">
   <img src="DOC/USER_GUIDE/assets/pcb-top-view.jpg" alt="PCB Analog Signal Isolator — tampak atas" width="760">
 </p>
 
 <p align="center">
-  <a href="DOC/USER_GUIDE/pinout-pcb.html"><strong>Lihat pinout visual &rarr;</strong></a>
+  <a href="DOC/USER_GUIDE/start-here.html"><strong>Mulai pemasangan PCB AIN/AOUT &rarr;</strong></a>
   &nbsp;·&nbsp;
   <a href="DOC/USER_GUIDE/assets/pinout-pcb-infographic.png"><strong>Unduh gambar pinout &rarr;</strong></a>
 </p>
@@ -59,15 +62,17 @@ GND sensor         ground terpisah / tidak tersambung          GND MCU
 
 ## Mulai cepat
 
-1. Saat daya mati, pilih **satu** jumper mode: `M2.4V1`, `M3.3V1`, atau `M5V1`.
-2. Hubungkan sensor 0–5 V ke `AIN` dan `GND` pada **SENSOR SIDE**.
-3. Hubungkan ADC ke `AOUT`, catu +5 V ke `5V`, dan ground host ke `GND` pada **MCU SIDE**.
-4. Nyalakan catu 5 V yang teratur dan memiliki pembatas arus, kemudian kalibrasikan pembacaan 0 V dan 5 V.
+1. Buka [Mulai di Sini — PCB AIN/AOUT](DOC/USER_GUIDE/start-here.html).
+2. Saat daya mati, pilih **satu** jumper mode: `M2.4V1`, `M3.3V1`, atau `M5V1`.
+3. Hubungkan sensor 0–5 V ke `AIN` dan `GND` pada **SENSOR SIDE**.
+4. Hubungkan ADC ke `AOUT`, catu +5 V ke `5V`, dan ground host ke `GND` pada **MCU SIDE**.
+5. Nyalakan catu 5 V yang teratur dan memiliki pembatas arus, kemudian kalibrasikan pembacaan 0 V dan 5 V.
 
 ## Dokumentasi
 
 | Dokumen | Kegunaan |
 | --- | --- |
+| [Mulai di Sini — PCB AIN/AOUT](DOC/USER_GUIDE/start-here.html) | Panduan utama pembeli: jumper, wiring ESP32, uji pertama, dan troubleshooting. |
 | [Pinout visual](DOC/USER_GUIDE/pinout-pcb.html) | Cara pemasangan dari foto PCB atas/bawah; buka di browser. |
 | [Gambar pinout siap dibagikan](DOC/USER_GUIDE/assets/pinout-pcb-infographic.png) | Infografik untuk pembeli, marketplace, atau teknisi lapangan. |
 | [Panduan pengguna](DOC/USER_GUIDE/panduan-visual.html) | Penjelasan kerja, mode, wiring, kalibrasi, dan troubleshooting. |

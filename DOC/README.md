@@ -10,7 +10,7 @@ Folder ini dipisahkan berdasarkan tujuan agar file yang dibutuhkan pengguna, tek
 | [`09_BOM_Latest_Schematic_LCSC_Mouser.xlsx`](09_BOM_Latest_Schematic_LCSC_Mouser.xlsx) | BOM baru hasil cocokkan dengan skematik saat ini; mencantumkan sumber LCSC dan Mouser serta item yang perlu disetujui. Lihat [catatan validasi](09_BOM_Latest_Schematic_LCSC_Mouser.md). |
 | `07`–`08` | Aturan layout PCB serta pengujian/kalibrasi. |
 
-Mulai dari [`USER_GUIDE/pinout-pcb.html`](USER_GUIDE/pinout-pcb.html) untuk pemasangan visual berdasarkan PCB fisik, atau [`USER_GUIDE/PINOUT_PCB_ID.md`](USER_GUIDE/PINOUT_PCB_ID.md) untuk versi Markdown.
+Mulai dari [`USER_GUIDE/start-here.html`](USER_GUIDE/start-here.html) untuk pemasangan PCB fisik yang bertuliskan `AIN/AOUT`. Versi Markdown: [`USER_GUIDE/START_HERE_ID.md`](USER_GUIDE/START_HERE_ID.md). Referensi Rev B2 lama tetap tersedia untuk teknisi.
 
 ## Catatan revisi
 

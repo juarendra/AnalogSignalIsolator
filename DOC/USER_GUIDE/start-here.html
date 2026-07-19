@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mulai di Sini — Analog Signal Isolator AIN/AOUT</title>
+  <style>
+    :root{--navy:#102b46;--blue:#1472b8;--ink:#172434;--line:#d8e3ec;--bg:#f5f8fb;--warn:#fff3d7}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Arial,Helvetica,sans-serif}header{color:#fff;background:linear-gradient(135deg,var(--navy),var(--blue));padding:42px 24px}header div,main{max-width:1020px;margin:auto}h1{margin:0 0 8px;font-size:clamp(29px,5vw,46px)}h2{color:var(--navy);margin-top:0}main{padding:24px}section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:25px;margin:18px 0}.warn{background:var(--warn);border-left:6px solid #d38c00}.hero,figure{margin:16px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden}.hero img,figure img{display:block;width:100%;height:auto}figcaption{padding:8px 12px;color:#586878;font-size:14px}table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--navy);color:#fff}tr:last-child td{border:0}code{background:#e9f0f5;padding:2px 5px;border-radius:4px;color:#173b5e}@media(max-width:620px){main{padding:14px}section{padding:17px}.scroll{overflow:auto}th,td{font-size:14px;padding:8px}}
+  </style>
+</head>
+<body>
+<header><div><h1>Mulai di Sini</h1><p>Untuk PCB Analog Signal Isolator yang bertuliskan <strong>AIN</strong> dan <strong>AOUT</strong>.</p></div></header>
+<main>
+  <section class="warn"><strong>Gunakan nama pin di PCB ini.</strong> Jangan memakai petunjuk J1/J2, VIN/VOUT, atau SW1 dari dokumen Rev B2 lama untuk memasang PCB AIN/AOUT ini. Panduan ini hanya untuk PCB bertuliskan MCU SIDE, SENSOR SIDE, AIN, AOUT, dan FIT ONE ONLY.</section>
+  <section><h2>1. Pastikan PCB Anda sama</h2><figure><img src="assets/pcb-top-view.jpg" alt="Tampak atas PCB AIN AOUT"><figcaption>MCU SIDE: AOUT, GND, 5V. SENSOR SIDE: AIN, GND, 5V.</figcaption></figure></section>
+  <section><h2>2. Pilih satu jumper mode</h2><div class="scroll"><table><thead><tr><th>Host</th><th>Jumper 0 Ω yang dipasang</th><th>AOUT pada AIN = 5 V</th></tr></thead><tbody><tr><td>ESP32</td><td><code>M2.4V1</code></td><td>sekitar 2,4 V</td></tr><tr><td>ADC 3,3 V</td><td><code>M3.3V1</code></td><td>sekitar 3,0 V</td></tr><tr><td>Arduino 5 V / PLC</td><td><code>M5V1</code></td><td>sekitar 4,5 V</td></tr></tbody></table></div><p>Area ini bertuliskan <strong>FIT ONE ONLY</strong>. Jangan memasang lebih dari satu jumper.</p></section>
+  <section><h2>3. Hubungkan seperti contoh ESP32 ini</h2><figure><img src="assets/wiring-esp32-example.svg" alt="Diagram wiring sensor melalui modul ke ESP32"><figcaption>Sensor OUT ke AIN, pin ADC ESP32 ke AOUT, dan kedua ground tetap terpisah.</figcaption></figure></section>
+  <section class="warn"><strong>Jangan menyatukan ground.</strong> GND sensor hanya ke SENSOR SIDE. GND ESP32 hanya ke MCU SIDE. Lepaskan hubungan yang tidak disengaja melalui USB, osiloskop, atau catu lain.</section>
+  <section><h2>4. Uji dan baca dengan ESP32</h2><p>Dengan mode ESP32 (<code>M2.4V1</code>), AOUT harus mendekati 0 V saat AIN = 0 V dan sekitar 2,4 V saat AIN = 5 V. Setelah itu lakukan kalibrasi dua titik.</p><pre style="overflow:auto;background:#102b46;color:#fff;padding:14px;border-radius:8px">constexpr int PIN_AOUT = 34;
+constexpr float VZERO = 0.012f; // ukur sendiri pada AIN = 0 V
+constexpr float VFULL = 2.390f; // ukur sendiri pada AIN = 5 V
+
+float vAout = analogReadMilliVolts(PIN_AOUT) / 1000.0f;
+float vSensor = (vAout - VZERO) * 5.0f / (VFULL - VZERO);</pre><p>GPIO34 hanya contoh; gunakan pin ADC yang tersedia di papan ESP32 Anda. <a href="START_HERE_ID.md"><strong>Buka panduan lengkap dan kode lengkap →</strong></a></p></section>
+</main></body></html>

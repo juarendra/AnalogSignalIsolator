@@ -1,10 +1,10 @@
-# Panduan Pengguna — Analog Signal Isolator
+# Referensi Teknik Rev B2 — Analog Signal Isolator
 
 **Versi desain: Rev B2**
 Modul ini mengirimkan tegangan analog DC dari sisi sensor ke sisi mikrokontroler/PLC **tanpa menyatukan ground kedua sisi**. Modul menerima sinyal sensor yang sudah dikondisikan pada rentang **0–5 V DC** dan menghasilkan tegangan keluaran yang dapat dipilih hingga **2,4 V, 3,0 V, atau 4,5 V**.
 
-> [!NOTE]
-> Panduan teknis Rev B2 menyebut selector `SW1`. PCB pada foto memakai jumper solder `M2.4V1` / `M3.3V1` / `M5V1`; ikuti [panduan pinout PCB fisik](PINOUT_PCB_ID.md) untuk pemasangan unit tersebut.
+> [!WARNING]
+> Ini adalah referensi teknik Rev B2, bukan panduan utama pembeli untuk PCB pada foto. Referensi ini memakai istilah `J1/J2`, `VIN/VOUT`, dan `SW1`; PCB fisik memakai `AIN/AOUT` dan jumper solder. Untuk pemasangan PCB fisik, gunakan [Mulai di Sini — PCB AIN/AOUT](START_HERE_ID.md).
 
 > [!IMPORTANT]
 > Ini adalah modul isolator sinyal bertegangan rendah untuk sistem elektronik. Isolasi pada modul **bukan** pernyataan sertifikasi keselamatan, bukan pengganti proteksi petir/surge, dan tidak untuk langsung mengukur tegangan listrik PLN.
